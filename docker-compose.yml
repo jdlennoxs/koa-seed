@@ -1,8 +1,22 @@
 version: '3'
 services:
   web:
-    build: .
+    build: . # Build local dockerfile
+    volumes:
+      - '.:/src' # Map current directory to src
     ports:
-      - '3333:3030'
-
+      - '3003:3003'
+    depends_on:
+      - mongo
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=mongodb://mongo:27017/aubisque # Mongo is avaliable at mongo in our network
+    restart: on-failure
+  mongo:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./.db:/data  # to store databases in host OS directory ./db
+    restart: on-failure
       

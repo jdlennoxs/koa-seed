@@ -1,7 +1,7 @@
 import * as Koa from 'koa';
 
 import { routes } from './routes';
-import { config } from './config';
+import { config } from '../config/config';
 import { logger } from './logger';
 
 const app = new Koa();

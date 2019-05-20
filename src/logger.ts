@@ -1,4 +1,4 @@
-import { config } from './config';
+import { config } from '../config/config';
 import * as Koa from 'koa';
 const { green, yellow, red } = require('kleur');
 

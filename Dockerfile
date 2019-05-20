@@ -7,5 +7,5 @@ RUN npm install -g -s --no-progress yarn && \
     # yarn run build && \
     # yarn run prune && \
     yarn cache clean
-CMD [ "yarn", "start" ]
-EXPOSE 3030
+EXPOSE 3003
+CMD [ "yarn", "start:dev" ]
